@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <!--[if lte IE 8]>
+        <script>
+                            if (!document.documentMode) {
+                                alert('Not compatible with IE 8, Please upgrade your browser.');
+                            }
+        </script>
+        <![endif]-->
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta charset="utf-8"/>
+        <title>eManageHealth</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+            <!--(if target debug)><!-->
+            <link rel="stylesheet" href = "js/vendor/bootstrap/dist/css/bootstrap.min.css"/>
+            <link rel="stylesheet" href = "/css/styles.css"/>
+       
+                    <!--<!(endif)-->
+                    <!--(if target release)><!-->
+                    <link rel="stylesheet" href = "/css/all.min.css"/>
+                    <!--<!(endif)-->
+                </head>
+                <body >
+                 <div ui-view class='visible-xs-*'></div>
+                <!--(if target debug)><!-->
+                <script src= "js/vendor/jquery/dist/jquery.min.js"></script>
+                <script src= "js/vendor/angular/angular.min.js"></script>
+                <script src= "js/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+                <script src= "js/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+              
+                <script src="js/app/services.js"></script>
+                <script src="js/app/controllers.js"></script>
+                <script src="js/app/app.js"></script>
+                <!--<!(endif)-->
+                <!--(if target release)><!-->
+                <script src="js/all.min.js"></script>
+                <!--<!(endif)-->
+                
+            </body>
+        </html>

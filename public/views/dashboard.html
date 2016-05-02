@@ -1,0 +1,105 @@
+ <form role="form">   
+    <div class="page-header">
+      <span style="padding-left: 20px;font-size: large;">Welcome {{user.name}} ({{user.role}})</span>
+      <span style="float:right;margin-right:150px;">Center :
+         <select ng-model="formData.pcenter" ng-options="c as c for c in center"></select>
+         <button type="button" class="btn-default" ng-click="logout()">Logout</button> 
+      </span>
+    </div>
+    <div class="container">
+    <div class="row">
+    <div class="col-xs-6 col-sm-3">
+        </div>
+        <div class="col-xs-6 col-sm-9">
+        
+       
+<div class="form-group row">
+<div class="col-sm-2">
+<label>ADD DOCTOR</label>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-sm-2">
+<label>Doctor Name</label>
+</div>
+<input class="form-inline" type="text" name="docname" ng-model="formData.docname">
+</div>
+
+<div class="form-group row">
+<div class="col-sm-2">
+<label>Mobile Number</label>
+</div>
+<input class="form-inline" type="text" name="mobile" ng-model="formData.mobile">
+</div>
+<div class="form-group row">
+<div class="col-sm-2">
+<label>Email ID</label>
+</div>
+<input class="form-inline" type="text" name="emailid" ng-model="formData.emailid">
+</div>
+
+<div class="form-group row">
+<div class="col-sm-2">
+<label>Registeration Number</label>
+</div>
+<input class="form-inline" type="text" name="reg" ng-model="formData.regno">
+</div>
+<div class="form-group row">
+<div class="col-sm-2">
+<label>Calendar Color</label>
+</div>
+<input class="form-inline" type="text" name="" ng-model="formData.calcolor">
+</div>
+<div class="form-group row">
+<div class="col-sm-2">
+<label>Active Login</label>
+</div>
+<label class="radio-inline">
+      <input  type="radio" name="optradio" ng-click="showcontent();">Yes
+    </label>
+    <label class="radio-inline">
+      <input  type="radio" name="optradio" ng-click="hidecontent();">No
+    </label>
+</div>
+<div class="form-group row" ng-show="showform">
+<div class="col-sm-2">
+<label>Type of login</label>
+</div>
+ <label class="radio-inline">
+
+      <input type="radio" ng-model="formData.role" name="logradio" value="admin">Practice Admin
+     <br>
+     <br>
+      <input type="radio" ng-model="formData.role" name="logradio" value="receptionist">Receptionist
+     <br>
+     <br>
+     <input type="radio" ng-model="formData.role" name="logradio" value="frontDesk">Front Desk
+     <br>
+     <br>
+      <input type="radio" ng-model="formData.role" name="logradio" value="biller">Biller
+    </label>
+    
+</div>
+  
+<div class="form-group row">
+<div class="col-sm-2">
+<label>Time Zone</label>
+</div>
+<select ng-model="formData.timez"  style="width:18%; padding:4px 4px;">
+  <option  value="5.5" selected="selected">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+</select>
+</div>
+<div class="form-group-row">
+<div class="col-sm-2">
+</div>
+<button type="button" class="btn-default" ng-click="createTodo()">Add Doctor</button>
+<a href='#' style="margin-left:2%;">Cancel</a>
+</div>
+</form>
+</div>
+        </div>
+    </div>
+    
+    
+    
+ 

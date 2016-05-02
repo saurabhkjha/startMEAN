@@ -1,0 +1,60 @@
+<div class="container">
+        <form action="javascript:void(0)" method="POST" id="sign-up-form" class="form-signin">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="email form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="password form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="login">Sign in</button>
+        </form>
+    </div>
+     <script src='http://code.jquery.com/jquery.js'></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+     
+    $(document).ready(function(){
+       
+                  $('#login').on("click", function(e) {
+                var email = $('.email').val();
+                var password = $('.password').val();
+                $.ajax({
+                    type: "POST",
+                    cache: false,
+                    dataType: "json",
+                    url: "/token/",
+                    data: {email:email, password:password},
+                    success: function(data){
+                         localStorage.setItem('user',JSON.stringify({email: email, token: data.token,name:data.name,role:data.role,center:data.center}));
+                         alert("You're now logged in");
+                        window.location.href = "http://localhost:3002/#/dashboard";
+                    },
+                    error: function(data) {
+                        alert(data.statusText);
+                    }
+                });
+            });
+      $('.logout').on("click", function(e) {
+         var token = Store.getToken();
+         Store.removeUser();
+          
+            $.ajax({
+                type: "GET",
+                cache: false,
+                dataType: "json",
+                url: "/logout",
+                headers: {
+                    token: token
+                },
+                success: function(data) {
+                    console.log(data);
+                    if (data.error) {
+                        alert("Issue logging out.");
+                    } else {
+                        alert("You're now logged out.");
+                    }
+                }
+            });
+        
+    });
+          });
+    </script>

@@ -1,0 +1,23 @@
+{
+  "name": "eManageHealth",
+  "description": "eManageHealth",
+  "main": "bin/server/server.js",
+  "authors": [
+    "Saurabh Kumar Jha"
+  ],
+  "license": "eManageHealth",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/js/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.2.18",
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6"
+  }
+}
